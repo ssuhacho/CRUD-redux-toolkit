@@ -28,3 +28,4 @@ UUID: https://www.npmjs.com/package/uuid?activeTab=readme
 ### Video Tutorial
 
 You can see my youtube video for this project in [here](https://youtu.be/SgnlgEEkqSo)
+# CRUD-redux-toolkit
