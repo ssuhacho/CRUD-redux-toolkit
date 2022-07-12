@@ -1,10 +1,19 @@
 import React from "react";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteUser } from "./userSlice";
 
 const UserList = () => {
-  const users = useSelector(store => store.users);
+  const dispatch = useDispatch();
+  const users = useSelector((store) => store.users);
+  const handleRemoveUser = (id) => {
+    dispatch(
+      deleteUser({
+        id,
+      })
+    );
+  };
   // console.log(users);
 
   const renderCard = () =>
@@ -36,7 +45,7 @@ const UserList = () => {
               </svg>
             </button>
           </Link>
-          <button>
+          <button onClick={() => handleRemoveUser(user.id)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
